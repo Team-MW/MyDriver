@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>MyDrivert - Chauffeur privé VTC Toulouse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Chauffeur privé VTC à Toulouse, transferts aéroport, gares, déplacements professionnels et événements 24h/24 - 7j/7.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#hero" class="logo">
+        <!-- Mets ton SVG ici -->
+        <img src="assets/logo.svg" alt="MyDrivert Chauffeur privé Toulouse">
+      </a>
+
+      <nav class="nav" id="mainNav">
+        <a href="#services">Services</a>
+        <a href="#why">Pourquoi nous ?</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#zone">Zone d’intervention</a>
+        <a href="#contact" class="nav-cta">Réserver</a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="hero-tag">Chauffeur privé VTC à Toulouse</p>
+          <h1>Vos déplacements <span class="text-gradient">haut de gamme</span> en toute sérénité</h1>
+          <p class="hero-subtitle">
+            Transferts aéroport, gares, hôtels, entreprises et événements.
+            Service ponctuel, discret et disponible 24h/24 – 7j/7.
+          </p>
+
+          <div class="hero-actions">
+            <a href="tel:0600000000" class="btn btn-primary">
+              Appeler maintenant
+              <span class="btn-sub">Réponse immédiate selon disponibilités</span>
+            </a>
+            <a href="#contact" class="btn btn-ghost">
+              Demander un devis
+            </a>
+          </div>
+
+          <div class="hero-info">
+            <div>
+              <span class="hero-info-label">Disponibilité</span>
+              <span class="hero-info-value">24h/24 · 7j/7</span>
+            </div>
+            <div>
+              <span class="hero-info-label">Paiement</span>
+              <span class="hero-info-value">CB · Espèces · Virement</span>
+            </div>
+            <div>
+              <span class="hero-info-label">Ville</span>
+              <span class="hero-info-value">Toulouse & Occitanie</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card-inner">
+            <p class="hero-card-title">Estimez votre trajet</p>
+            <form class="quote-form">
+              <label>
+                Départ
+                <input type="text" name="depart" placeholder="Adresse ou lieu de départ">
+              </label>
+              <label>
+                Destination
+                <input type="text" name="arrivee" placeholder="Adresse ou lieu d’arrivée">
+              </label>
+              <div class="form-row">
+                <label>
+                  Date
+                  <input type="date" name="date">
+                </label>
+                <label>
+                  Heure
+                  <input type="time" name="heure">
+                </label>
+              </div>
+              <label>
+                Nombre de passagers
+                <select name="passagers">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5+</option>
+                </select>
+              </label>
+              <button type="submit" class="btn btn-primary btn-full">
+                Envoyer la demande
+              </button>
+              <p class="quote-note">
+                Devis gratuit et sans engagement. Confirmation rapide par téléphone ou email.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Nos services de chauffeur privé</h2>
+          <p>Un service sur-mesure pour tous vos déplacements à Toulouse et en Occitanie.</p>
+        </header>
+
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Transferts aéroports & gares</h3>
+            <p>
+              Prise en charge à l’heure, suivi de vol, accueil avec pancarte
+              et assistance bagages pour l’aéroport de Toulouse-Blagnac, Montauban,
+              Carcassonne, etc.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Déplacements professionnels</h3>
+            <p>
+              Chauffeur privé pour rendez-vous d’affaires, visites clients,
+              tournées commerciales et journées complètes en mise à disposition.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Événements & soirées</h3>
+            <p>
+              Mariages, anniversaires, soirées, matchs, concerts : profitez
+              pleinement de votre événement, on se charge de la route.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Tourisme & visites</h3>
+            <p>
+              Découverte de Toulouse, Albi, Carcassonne, Lourdes et toute
+              l’Occitanie avec un chauffeur local qui connaît parfaitement la région.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- POURQUOI NOUS -->
+    <section id="why" class="section section-alt">
+      <div class="container">
+        <header class="section-header">
+          <h2>Pourquoi choisir MyDrivert&nbsp;?</h2>
+          <p>Un service sérieux, transparent et confortable, dès la réservation.</p>
+        </header>
+
+        <div class="features-grid">
+          <div class="feature">
+            <div class="feature-icon">⏱️</div>
+            <h3>Ponctualité garantie</h3>
+            <p>Heures de départ respectées, marges de sécurité sur les trajets aéroport et gares.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">✅</div>
+            <h3>Tarifs clairs</h3>
+            <p>Prix connu à l’avance sur devis, sans surprise à l’arrivée.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🛡️</div>
+            <h3>Chauffeur professionnel</h3>
+            <p>Conducteur VTC déclaré, expérimenté, discret et habitué aux clients exigeants.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🚘</div>
+            <h3>Véhicule tout confort</h3>
+            <p>Berline ou van récent, climatisé, propre, avec eau, chargeurs et Wi-Fi à bord.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TARIFS -->
+    <section id="tarifs" class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Exemples de tarifs</h2>
+          <p>À adapter selon votre grille de prix réelle. Prix indicatifs, de jour, hors conditions spéciales.</p>
+        </header>
+
+        <div class="tarifs-table-wrapper">
+          <table class="tarifs-table">
+            <thead>
+              <tr>
+                <th>Trajet</th>
+                <th>Berline (1–3 pers.)</th>
+                <th>Van (4–7 pers.)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Toulouse centre → Aéroport TLS</td>
+                <td>à partir de 30 €</td>
+                <td>à partir de 45 €</td>
+              </tr>
+              <tr>
+                <td>Gare Matabiau → Aéroport TLS</td>
+                <td>à partir de 35 €</td>
+                <td>à partir de 50 €</td>
+              </tr>
+              <tr>
+                <td>Toulouse → Montauban</td>
+                <td>à partir de 90 €</td>
+                <td>à partir de 120 €</td>
+              </tr>
+              <tr>
+                <td>Toulouse → Carcassonne</td>
+                <td>à partir de 140 €</td>
+                <td>à partir de 170 €</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="tarifs-note">
+          Les tarifs définitifs sont confirmés lors de la réservation, selon l’horaire, le trafic
+          et les besoins spécifiques (attente, sièges enfants, etc.).
+        </p>
+      </div>
+    </section>
+
+    <!-- ZONE -->
+    <section id="zone" class="section section-alt">
+      <div class="container zone-grid">
+        <div>
+          <header class="section-header section-header-left">
+            <h2>Zone d’intervention</h2>
+            <p>Basé à Toulouse, nous couvrons l’ensemble de la métropole et une large partie de l’Occitanie.</p>
+          </header>
+          <ul class="zone-list">
+            <li>Toulouse et sa métropole</li>
+            <li>Aéroport Toulouse-Blagnac & hôtels alentours</li>
+            <li>Blagnac, Colomiers, Labège, Balma, Portet-sur-Garonne…</li>
+            <li>Transferts longue distance sur demande (France & Espagne)</li>
+          </ul>
+          <p class="zone-text">
+            Pour tout trajet spécifique (navette régulière, tournée, événement, etc.),
+            n’hésitez pas à nous envoyer les détails via le formulaire ci-dessous.
+          </p>
+        </div>
+        <div class="zone-card">
+          <p class="zone-card-title">Infos rapides</p>
+          <ul class="zone-card-list">
+            <li><strong>Service :</strong> 24h/24 – 7j/7 sur réservation</li>
+            <li><strong>Prise en charge :</strong> domicile, hôtel, entreprise, gares, aéroports</li>
+            <li><strong>Types de trajets :</strong> ponctuels ou mise à disposition</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container contact-grid">
+        <div>
+          <header class="section-header section-header-left">
+            <h2>Contact & réservation</h2>
+            <p>Expliquez votre trajet, nous revenons vers vous rapidement pour confirmer le prix et la disponibilité.</p>
+          </header>
+
+          <div class="contact-infos">
+            <p><strong>Téléphone :</strong> <a href="tel:0600000000">06 00 00 00 00</a></p>
+            <p><strong>Email :</strong> <a href="mailto:contact@mydrivert.fr">contact@mydrivert.fr</a></p>
+            <p><strong>Horaires :</strong> Réservations 7j/7 – Service 24h/24</p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <form class="contact-form">
+            <label>
+              Nom & prénom
+              <input type="text" name="nom" placeholder="Votre nom" required>
+            </label>
+            <label>
+              Téléphone
+              <input type="tel" name="telephone" placeholder="06..." required>
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="vous@example.com">
+            </label>
+            <label>
+              Détail de votre demande
+              <textarea name="message" rows="4" placeholder="Date, heure, trajet, nombre de personnes..."></textarea>
+            </label>
+            <button type="submit" class="btn btn-primary btn-full">
+              Envoyer la demande
+            </button>
+            <p class="contact-note">
+              En cliquant sur “Envoyer”, vous acceptez d’être recontacté par MyDrivert pour votre demande.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> MyDrivert · Chauffeur privé VTC à Toulouse. Tous droits réservés.</p>
+      <p class="footer-links">
+        <a href="#">Mentions légales</a>
+        <span>·</span>
+        <a href="#">Politique de confidentialité</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Menu mobile
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('mainNav');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('nav-open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      document.body.classList.toggle('no-scroll', isOpen);
+    });
+
+    // Year auto
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Empêche l’envoi réel des formulaires (à enlever si tu mets un vrai back)
+    document.querySelectorAll('form').forEach(form => {
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        alert('Formulaire reçu. Configurez l’envoi vers votre email / CRM.');
+      });
+    });
+  </script>
+</body>
+</html>
