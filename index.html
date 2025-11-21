@@ -9,8 +9,37 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
-<body>
+<body class="loading">
+  <!-- LOADER -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <img src="assets/logo.svg" alt="MyDrivert">
+      </div>
+      <div class="loader-spinner">
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+      </div>
+      <div class="loader-text">
+        <span class="loader-text-line">Chargement</span>
+        <span class="loader-dots">
+          <span>.</span>
+          <span>.</span>
+          <span>.</span>
+        </span>
+      </div>
+      <div class="loader-progress">
+        <div class="loader-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- HEADER -->
   <header class="header">
     <div class="container header-inner">
@@ -47,15 +76,20 @@
           </p>
 
           <div class="hero-actions">
-            <a href="tel:0600000000" class="btn btn-primary">
+            <a href="tel:0651248860" class="btn btn-primary">
               <span class="btn-particles">
                 <span class="btn-particle" style="left: 20%; animation-delay: 0s;"></span>
                 <span class="btn-particle" style="left: 40%; animation-delay: 0.3s;"></span>
                 <span class="btn-particle" style="left: 60%; animation-delay: 0.6s;"></span>
                 <span class="btn-particle" style="left: 80%; animation-delay: 0.9s;"></span>
               </span>
-              Appeler maintenant
-              <span class="btn-sub">Réponse immédiate selon disponibilités</span>
+              <span class="btn-main-text">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="btn-icon">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Réserver votre trajet
+              </span>
+              <span class="btn-sub">Disponible 24h/24 · Réponse immédiate</span>
             </a>
             <a href="#contact" class="btn btn-ghost">
               Demander un devis
@@ -122,7 +156,7 @@
             <p>Devis gratuit en moins de 2 minutes • Disponibilité 24/7</p>
           </div>
           <div class="cta-banner-actions">
-            <a href="tel:0600000000" class="cta-btn cta-btn-primary">
+            <a href="tel:0651248860" class="cta-btn cta-btn-primary">
               <span class="cta-btn-glow"></span>
               <span class="cta-btn-text">Appeler maintenant</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -252,7 +286,7 @@
               <h4>Prêt à réserver votre trajet ?</h4>
               <p>Service premium disponible 24h/24 et 7j/7</p>
             </div>
-            <a href="tel:0600000000" class="cta-inline-btn cta-inline-btn-primary">
+            <a href="tel:0651248860" class="cta-inline-btn cta-inline-btn-primary">
               <span class="cta-pulse"></span>
               <span>Appeler maintenant</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -263,6 +297,18 @@
         </div>
       </div>
     </section>
+
+    <!-- Séparateur de section -->
+    <div class="section-divider">
+      <div class="section-divider-line"></div>
+      <div class="section-divider-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="section-divider-line"></div>
+    </div>
 
     <!-- TARIFS -->
     <section id="tarifs" class="section">
@@ -308,31 +354,114 @@
       </div>
     </section>
 
+    <!-- Séparateur de section -->
+    <div class="section-divider">
+      <div class="section-divider-line"></div>
+      <div class="section-divider-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/>
+          <circle cx="12" cy="10" r="3" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="section-divider-line"></div>
+    </div>
+
     <!-- ZONE -->
     <section id="zone" class="section section-alt">
       <div class="container zone-grid">
-        <div>
+        <div class="zone-content">
           <header class="section-header section-header-left">
-            <h2>Zone d’intervention</h2>
-            <p>Basé à Toulouse, nous couvrons l’ensemble de la métropole et une large partie de l’Occitanie.</p>
+            <h2>Zone d'intervention</h2>
+            <p>Basé à Toulouse, nous couvrons l'ensemble de la métropole et une large partie de l'Occitanie.</p>
           </header>
+          
+          <!-- Carte interactive Leaflet -->
+          <div class="zone-map">
+            <div class="zone-map-header">
+              <h3 class="zone-map-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="12" cy="10" r="3" fill="currentColor"/>
+                </svg>
+                Carte de la zone d'intervention
+              </h3>
+              <p class="zone-map-subtitle">Explorez notre zone de couverture - Cliquez sur les marqueurs pour plus d'informations</p>
+            </div>
+            <div class="zone-map-container" id="interactiveMap"></div>
+          </div>
+          
           <ul class="zone-list">
-            <li>Toulouse et sa métropole</li>
-            <li>Aéroport Toulouse-Blagnac & hôtels alentours</li>
-            <li>Blagnac, Colomiers, Labège, Balma, Portet-sur-Garonne…</li>
-            <li>Transferts longue distance sur demande (France & Espagne)</li>
+            <li class="zone-list-item">
+              <div class="zone-list-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="12" cy="9" r="2.5" fill="currentColor"/>
+                </svg>
+              </div>
+              <span>Toulouse et sa métropole</span>
+            </li>
+            <li class="zone-list-item">
+              <div class="zone-list-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="12" cy="10" r="3" fill="currentColor"/>
+                </svg>
+              </div>
+              <span>Aéroport Toulouse-Blagnac & hôtels alentours</span>
+            </li>
+            <li class="zone-list-item">
+              <div class="zone-list-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span>Blagnac, Colomiers, Labège, Balma, Portet-sur-Garonne…</span>
+            </li>
+            <li class="zone-list-item">
+              <div class="zone-list-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <span>Transferts longue distance sur demande (France & Espagne)</span>
+            </li>
           </ul>
           <p class="zone-text">
             Pour tout trajet spécifique (navette régulière, tournée, événement, etc.),
-            n’hésitez pas à nous envoyer les détails via le formulaire ci-dessous.
+            n'hésitez pas à nous envoyer les détails via le formulaire ci-dessous.
           </p>
         </div>
         <div class="zone-card">
-          <p class="zone-card-title">Infos rapides</p>
+          <div class="zone-card-header">
+            <div class="zone-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <p class="zone-card-title">Infos rapides</p>
+          </div>
           <ul class="zone-card-list">
-            <li><strong>Service :</strong> 24h/24 – 7j/7 sur réservation</li>
-            <li><strong>Prise en charge :</strong> domicile, hôtel, entreprise, gares, aéroports</li>
-            <li><strong>Types de trajets :</strong> ponctuels ou mise à disposition</li>
+            <li class="zone-card-item">
+              <div class="zone-card-item-icon">✓</div>
+              <div>
+                <strong>Service :</strong> 24h/24 – 7j/7 sur réservation
+              </div>
+            </li>
+            <li class="zone-card-item">
+              <div class="zone-card-item-icon">✓</div>
+              <div>
+                <strong>Prise en charge :</strong> domicile, hôtel, entreprise, gares, aéroports
+              </div>
+            </li>
+            <li class="zone-card-item">
+              <div class="zone-card-item-icon">✓</div>
+              <div>
+                <strong>Types de trajets :</strong> ponctuels ou mise à disposition
+              </div>
+            </li>
           </ul>
         </div>
       </div>
@@ -348,7 +477,7 @@
           </header>
 
           <div class="contact-infos">
-            <p><strong>Téléphone :</strong> <a href="tel:0600000000">06 00 00 00 00</a></p>
+            <p><strong>Téléphone :</strong> <a href="tel:0651248860">06 51 24 88 60</a></p>
             <p><strong>Email :</strong> <a href="mailto:contact@mydrivert.fr">contact@mydrivert.fr</a></p>
             <p><strong>Horaires :</strong> Réservations 7j/7 – Service 24h/24</p>
           </div>
@@ -357,7 +486,7 @@
         <div class="contact-card">
           <p class="contact-intro">Transmettez les détails de votre trajet (date, heure, adresses, passagers) :</p>
           <p class="contact-line">
-            <a class="contact-inline" href="tel:0600000000">06 00 00 00 00</a>
+            <a class="contact-inline" href="tel:0651248860">06 51 24 88 60</a>
             <span class="contact-sep">•</span>
             <a class="contact-inline" href="mailto:contact@mydrivert.fr">contact@mydrivert.fr</a>
           </p>
@@ -372,19 +501,14 @@
   <!-- CTA FLOATING -->
   <div class="cta-floating">
     <div class="cta-floating-content">
-      <div class="cta-floating-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
       <div class="cta-floating-text">
         <span class="cta-floating-label">Appelez-nous</span>
-        <span class="cta-floating-phone">06 00 00 00 00</span>
+        <span class="cta-floating-phone">06 51 24 88 60</span>
       </div>
-      <a href="tel:0600000000" class="cta-floating-btn">
+      <a href="tel:0651248860" class="cta-floating-btn">
         <span class="cta-floating-pulse"></span>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="currentColor" fill-opacity="0.1"/>
         </svg>
       </a>
     </div>
@@ -395,9 +519,9 @@
     <div class="container footer-inner">
       <p>© <span id="year"></span> MyDrivert · Chauffeur privé VTC à Toulouse. Tous droits réservés.</p>
       <p class="footer-links">
-        <a href="#">Mentions légales</a>
+        <a href="mentions-legales.html">Mentions légales</a>
         <span>·</span>
-        <a href="#">Politique de confidentialité</a>
+        <a href="politique-de-confidentialite.html">Politique de confidentialité</a>
       </p>
     </div>
   </footer>
@@ -530,6 +654,198 @@
         }, index * 100);
       });
     });
+
+    // Gestion du loader
+    const pageLoader = document.getElementById('pageLoader');
+    const loaderProgressBar = document.querySelector('.loader-progress-bar');
+    
+    // Simulation de la progression (plus lente pour être visible plus longtemps)
+    let progress = 0;
+    const progressInterval = setInterval(() => {
+      progress += Math.random() * 8 + 2; // Progression plus lente (2-10% par intervalle)
+      if (progress > 85) progress = 85; // S'arrête à 85% pour laisser le temps
+      if (loaderProgressBar) {
+        loaderProgressBar.style.width = progress + '%';
+      }
+    }, 150); // Intervalle plus long (150ms au lieu de 100ms)
+
+    // Masquer le loader une fois que tout est chargé (avec délai minimum)
+    window.addEventListener('load', () => {
+      // Attendre au minimum 2.5 secondes pour que le loader soit visible
+      const minDisplayTime = 2500;
+      const loadStartTime = performance.now();
+      
+      setTimeout(() => {
+        clearInterval(progressInterval);
+        if (loaderProgressBar) {
+          loaderProgressBar.style.width = '100%';
+        }
+        
+        // Calculer le temps restant pour atteindre le minimum
+        const elapsedTime = performance.now() - loadStartTime;
+        const remainingTime = Math.max(0, minDisplayTime - elapsedTime);
+        
+        setTimeout(() => {
+          if (pageLoader) {
+            pageLoader.classList.add('loader-fade-out');
+            setTimeout(() => {
+              pageLoader.style.display = 'none';
+              document.body.classList.remove('loading');
+            }, 600);
+          }
+        }, remainingTime + 500); // +500ms pour laisser voir la barre à 100%
+      }, minDisplayTime);
+    });
+
+    // Fallback si le chargement prend trop de temps (augmenté à 8 secondes)
+    setTimeout(() => {
+      if (pageLoader && pageLoader.style.display !== 'none') {
+        clearInterval(progressInterval);
+        if (loaderProgressBar) {
+          loaderProgressBar.style.width = '100%';
+        }
+        setTimeout(() => {
+          pageLoader.classList.add('loader-fade-out');
+          setTimeout(() => {
+            pageLoader.style.display = 'none';
+            document.body.classList.remove('loading');
+          }, 600);
+        }, 500);
+      }
+    }, 8000); // Augmenté à 8 secondes
+
+    // Carte Leaflet interactive
+    function initMap() {
+      const mapContainer = document.getElementById('interactiveMap');
+      
+      if (!mapContainer || typeof L === 'undefined') {
+        return;
+      }
+      // Initialisation de la carte centrée sur Toulouse
+      const map = L.map('interactiveMap', {
+        center: [43.6047, 1.4442], // Coordonnées de Toulouse
+        zoom: 11,
+        zoomControl: true,
+        scrollWheelZoom: true,
+        attributionControl: false
+      });
+
+      // Style personnalisé pour la carte (thème clair)
+      const tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 19
+      });
+
+      tileLayer.addTo(map);
+
+      // Icônes personnalisées
+      const createCustomIcon = (color, size = 25) => {
+        return L.divIcon({
+          className: 'custom-marker',
+          html: `
+            <div style="
+              width: ${size}px;
+              height: ${size}px;
+              background: ${color};
+              border: 3px solid #ffffff;
+              border-radius: 50%;
+              box-shadow: 0 0 15px ${color}, 0 4px 12px rgba(0,0,0,0.4);
+              position: relative;
+              animation: markerPulse 2s ease-in-out infinite;
+            ">
+              <div style="
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: ${size * 0.4}px;
+                height: ${size * 0.4}px;
+                background: #ffffff;
+                border-radius: 50%;
+              "></div>
+            </div>
+          `,
+          iconSize: [size, size],
+          iconAnchor: [size / 2, size / 2],
+          popupAnchor: [0, -size / 2]
+        });
+      };
+
+      const iconMain = createCustomIcon('var(--color-primary-soft)', 30);
+      const iconAirport = createCustomIcon('var(--color-primary)', 28);
+      const iconCity = createCustomIcon('rgba(40, 169, 147, 0.8)', 22);
+
+      // Marqueurs avec popups
+      const toulouseMarker = L.marker([43.6047, 1.4442], { icon: iconMain }).addTo(map);
+      toulouseMarker.bindPopup(`
+        <div style="color: var(--color-text); font-family: 'Inter', sans-serif;">
+          <h3 style="margin: 0 0 0.5rem; color: var(--color-primary-soft); font-size: 1.1rem;">🏙️ Toulouse</h3>
+          <p style="margin: 0; font-size: 0.9rem; color: var(--color-muted);">
+            Capitale de l'Occitanie<br>
+            Centre de notre zone d'intervention
+          </p>
+        </div>
+      `, {
+        className: 'custom-popup'
+      });
+
+      const airportMarker = L.marker([43.6291, 1.3638], { icon: iconAirport }).addTo(map);
+      airportMarker.bindPopup(`
+        <div style="color: var(--color-text); font-family: 'Inter', sans-serif;">
+          <h3 style="margin: 0 0 0.5rem; color: var(--color-primary-soft); font-size: 1.1rem;">✈️ Aéroport Toulouse-Blagnac</h3>
+          <p style="margin: 0; font-size: 0.9rem; color: var(--color-muted);">
+            Transferts disponibles 24/7<br>
+            Suivi de vol et accueil avec pancarte
+          </p>
+        </div>
+      `, {
+        className: 'custom-popup'
+      });
+
+      // Villes périphériques
+      const cities = [
+        { name: 'Blagnac', coords: [43.6333, 1.3833], info: 'Ville de la métropole toulousaine' },
+        { name: 'Colomiers', coords: [43.6167, 1.3333], info: 'Ville de la métropole toulousaine' },
+        { name: 'Labège', coords: [43.5333, 1.5167], info: 'Ville de la métropole toulousaine' },
+        { name: 'Balma', coords: [43.6167, 1.5000], info: 'Ville de la métropole toulousaine' },
+        { name: 'Portet-sur-Garonne', coords: [43.5167, 1.4000], info: 'Ville de la métropole toulousaine' }
+      ];
+
+      cities.forEach(city => {
+        const marker = L.marker(city.coords, { icon: iconCity }).addTo(map);
+        marker.bindPopup(`
+          <div style="color: var(--color-text); font-family: 'Inter', sans-serif;">
+            <h3 style="margin: 0 0 0.5rem; color: var(--color-primary-soft); font-size: 1rem;">📍 ${city.name}</h3>
+            <p style="margin: 0; font-size: 0.85rem; color: var(--color-muted);">${city.info}</p>
+          </div>
+        `, {
+          className: 'custom-popup'
+        });
+      });
+
+      // Cercle de zone de couverture
+      const coverageCircle = L.circle([43.6047, 1.4442], {
+        color: 'var(--color-primary-soft)',
+        fillColor: 'rgba(40, 169, 147, 0.15)',
+        fillOpacity: 0.3,
+        radius: 25000 // 25km de rayon
+      }).addTo(map);
+
+      // Ajuster la vue pour voir toute la zone
+      map.fitBounds([
+        [43.45, 1.25], // Sud-ouest
+        [43.75, 1.65]  // Nord-est
+      ], {
+        padding: [50, 50]
+      });
+    }
+
+    // Initialiser la carte après le chargement
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initMap);
+    } else {
+      initMap();
+    }
 
   </script>
 </body>
