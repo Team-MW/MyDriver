@@ -925,12 +925,6 @@ body::after {
   background: none;
 }
 
-.hero-photo {
-  padding: 0;
-  border: none;
-  background: none;
-}
-
 .hero-photo img {
   display: block;
   width: 100%;
@@ -938,7 +932,6 @@ body::after {
   min-height: 360px;
   object-fit: cover;
   border-radius: var(--radius-xl);
-  box-shadow: 0 45px 80px rgba(0, 0, 0, 0.45);
 }
 
 .hero-card-title {
@@ -1413,6 +1406,20 @@ body::after {
   border-radius: 2px;
 }
 
+.card-price {
+  margin: 0.5rem 0 0.8rem;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.price-large {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary-soft);
+  margin-left: 0.3rem;
+  text-shadow: 0 0 10px rgba(40, 169, 147, 0.3);
+}
+
 /* Features */
 
 .features-grid {
@@ -1563,11 +1570,134 @@ body::after {
   background: rgba(8, 10, 22, 0.35);
 }
 
-.tarifs-note {
-  margin-top: 0.75rem;
-  font-size: 0.8rem;
-  color: var(--color-muted);
+/* Garanties & Engagements */
+.guarantees-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.guarantee-card {
+  background: 
+    linear-gradient(145deg, rgba(20, 22, 41, 0.95), rgba(15, 18, 35, 0.9)),
+    radial-gradient(circle at top left, rgba(40, 169, 147, 0.1), transparent 50%);
+  border: 1px solid rgba(40, 169, 147, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.guarantee-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-primary-soft), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.guarantee-card:hover::before {
+  opacity: 1;
+}
+
+.guarantee-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(40, 169, 147, 0.5);
+  box-shadow: 
+    0 16px 48px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(40, 169, 147, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.guarantee-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(40, 169, 147, 0.2), rgba(59, 194, 171, 0.15));
+  border: 1px solid rgba(40, 169, 147, 0.3);
+  border-radius: 16px;
+  color: var(--color-primary-soft);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(40, 169, 147, 0.2);
+}
+
+.guarantee-card:hover .guarantee-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: linear-gradient(135deg, rgba(40, 169, 147, 0.3), rgba(59, 194, 171, 0.25));
+  border-color: rgba(40, 169, 147, 0.5);
+  box-shadow: 0 8px 25px rgba(40, 169, 147, 0.4);
+}
+
+.guarantee-icon svg {
+  width: 32px;
+  height: 32px;
+  filter: drop-shadow(0 2px 4px rgba(40, 169, 147, 0.3));
+}
+
+.guarantee-card h3 {
+  margin: 0 0 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.guarantee-card p {
+  margin: 0;
+  color: var(--color-text);
+  opacity: 0.85;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.guarantees-note {
+  margin-top: 2.5rem;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  text-align: center;
+  line-height: 1.7;
+  padding: 1.5rem;
+  background: rgba(20, 22, 41, 0.6);
+  border: 1px solid rgba(40, 169, 147, 0.2);
+  border-radius: var(--radius-lg);
+}
+
+.tarifs-note {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  text-align: center;
+  line-height: 1.7;
+  padding: 1.5rem;
+  background: rgba(20, 22, 41, 0.6);
+  border: 1px solid rgba(40, 169, 147, 0.2);
+  border-radius: var(--radius-lg);
+}
+
+.tarif-link {
+  color: var(--color-primary-soft) !important;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(40, 169, 147, 0.5);
+  transition: all 0.2s ease;
+}
+
+.tarif-link:hover {
+  color: var(--color-primary) !important;
+  text-decoration-color: var(--color-primary-soft);
 }
 
 /* Zone */
@@ -2025,8 +2155,74 @@ body::after {
 
 .footer {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 1.4rem 0 1.6rem;
+  padding: 2.5rem 0 1.6rem;
   background: #050811;
+}
+
+.footer-tarifs {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(40, 169, 147, 0.2);
+}
+
+.footer-tarifs-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 1.2rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--color-text), var(--color-primary-soft));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.footer-tarifs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-tarif-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1rem;
+  background: rgba(20, 22, 41, 0.6);
+  border: 1px solid rgba(40, 169, 147, 0.2);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.footer-tarif-item:hover {
+  border-color: rgba(40, 169, 147, 0.4);
+  background: rgba(20, 22, 41, 0.8);
+  transform: translateY(-2px);
+}
+
+.footer-tarif-service {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.footer-tarif-price {
+  font-size: 1rem;
+  color: var(--color-primary-soft);
+  font-weight: 700;
+}
+
+.footer-tarif-price strong {
+  font-size: 1.1rem;
+}
+
+.footer-tarifs-note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin: 0;
+  font-style: italic;
 }
 
 .footer-inner {
@@ -2048,6 +2244,11 @@ body::after {
 .footer a {
   color: var(--color-muted);
   text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer a:hover {
+  color: var(--color-primary-soft);
 }
 
 /* Utils */
@@ -2711,17 +2912,21 @@ body::after {
     left: 1rem;
     right: 1rem;
     padding: 1.5rem;
-    background: rgba(5, 8, 17, 0.96);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(5, 8, 17, 0.98);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(40, 169, 147, 0.3);
     border-radius: 26px;
     flex-direction: column;
     gap: 1.25rem;
     transform: translateY(-125%);
     opacity: 0;
     pointer-events: none;
-    transition: transform 0.25s ease, opacity 0.2s ease;
-    box-shadow: 0 35px 90px rgba(0, 0, 0, 0.6);
-    z-index: 25;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    box-shadow: 
+      0 35px 90px rgba(0, 0, 0, 0.7),
+      0 0 40px rgba(40, 169, 147, 0.2);
+    z-index: 1000;
+    visibility: hidden;
     overflow: hidden;
   }
 
@@ -2743,6 +2948,7 @@ body::after {
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
+    visibility: visible;
   }
 
   .nav-cta {
