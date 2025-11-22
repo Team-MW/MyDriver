@@ -2210,8 +2210,9 @@ body::after {
 
 .footer-tarif-item {
   display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
   padding: 1rem;
   background: rgba(20, 22, 41, 0.6);
   border: 1px solid rgba(40, 169, 147, 0.2);
@@ -2225,16 +2226,30 @@ body::after {
   transform: translateY(-2px);
 }
 
+.footer-tarif-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
 .footer-tarif-service {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--color-text);
-  font-weight: 500;
+  font-weight: 600;
+}
+
+.footer-tarif-subtitle {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  font-weight: 400;
 }
 
 .footer-tarif-price {
   font-size: 1rem;
   color: var(--color-primary-soft);
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .footer-tarif-price strong {
