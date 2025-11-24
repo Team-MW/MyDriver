@@ -23,6 +23,12 @@
 
 html {
   scroll-behavior: smooth;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(40, 169, 147, 0.08) 0, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(59, 194, 171, 0.06) 0, transparent 50%),
+    radial-gradient(circle at top left, #101326 0, #050811 45%, #02030a 100%);
+  min-height: 100%;
+  background-attachment: fixed;
 }
 
 html,
@@ -38,11 +44,13 @@ body {
     radial-gradient(circle at 20% 30%, rgba(40, 169, 147, 0.08) 0, transparent 50%),
     radial-gradient(circle at 80% 70%, rgba(59, 194, 171, 0.06) 0, transparent 50%),
     radial-gradient(circle at top left, #101326 0, #050811 45%, #02030a 100%);
+  background-attachment: fixed;
   color: var(--color-text);
   line-height: 1.6;
   position: relative;
   overflow-x: hidden;
   padding-top: 70px;
+  min-height: 100vh;
 }
 
 body.loading {
