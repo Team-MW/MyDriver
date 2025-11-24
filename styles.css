@@ -42,6 +42,7 @@ body {
   line-height: 1.6;
   position: relative;
   overflow-x: hidden;
+  padding-top: 70px;
 }
 
 body.loading {
@@ -185,16 +186,18 @@ body::after {
 /* HEADER */
 
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
   backdrop-filter: blur(20px) saturate(180%);
   background: 
     linear-gradient(to bottom, rgba(5, 8, 17, 0.95), rgba(5, 8, 17, 0.8)),
     linear-gradient(90deg, transparent 0%, rgba(40, 169, 147, 0.03) 50%, transparent 100%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
   overflow: visible;
 }
 
@@ -2262,6 +2265,214 @@ body::after {
   color: var(--color-muted);
   margin: 0;
   font-style: italic;
+}
+
+/* Styles pour la page grille tarifaire */
+.tarifs-page-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tarifs-section {
+  margin-bottom: 3rem;
+}
+
+.tarifs-section:last-of-type {
+  margin-bottom: 2rem;
+}
+
+.tarifs-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(40, 169, 147, 0.3);
+  position: relative;
+}
+
+.tarifs-section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary-soft), transparent);
+}
+
+.tarifs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.tarif-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background: 
+    linear-gradient(135deg, rgba(20, 22, 41, 0.8), rgba(15, 18, 35, 0.8)),
+    linear-gradient(145deg, rgba(40, 169, 147, 0.05), transparent);
+  border: 1px solid rgba(40, 169, 147, 0.2);
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.tarif-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(40, 169, 147, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.tarif-card:hover {
+  border-color: rgba(40, 169, 147, 0.5);
+  background: 
+    linear-gradient(135deg, rgba(20, 22, 41, 0.95), rgba(15, 18, 35, 0.95)),
+    linear-gradient(145deg, rgba(40, 169, 147, 0.1), transparent);
+  transform: translateY(-4px);
+  box-shadow: 
+    0 8px 30px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(40, 169, 147, 0.15);
+}
+
+.tarif-card:hover::before {
+  opacity: 1;
+}
+
+.tarif-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.tarif-service {
+  font-size: 1rem;
+  color: var(--color-text);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.tarif-subtitle {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.tarif-price {
+  font-size: 1.1rem;
+  color: var(--color-primary-soft);
+  font-weight: 700;
+  white-space: nowrap;
+  text-align: right;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.tarif-card:hover .tarif-price {
+  color: var(--color-primary);
+  text-shadow: 0 0 10px rgba(40, 169, 147, 0.5);
+}
+
+/* Style spécifique pour le h1 de la page grille tarifaire */
+.section-header h1 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700;
+  margin: 0 0 1rem;
+  background: linear-gradient(135deg, var(--color-text) 0%, var(--color-primary-soft) 50%, var(--color-text) 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientShift 3s ease infinite;
+  line-height: 1.2;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Responsive pour la page grille tarifaire */
+@media (max-width: 768px) {
+  .tarifs-page-container {
+    max-width: 100%;
+  }
+
+  .tarifs-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .tarifs-section-title {
+    font-size: 1.3rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .tarifs-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .tarif-card {
+    padding: 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .tarif-card-content {
+    width: 100%;
+  }
+
+  .tarif-service {
+    font-size: 0.95rem;
+  }
+
+  .tarif-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .tarif-price {
+    font-size: 1rem;
+    text-align: left;
+    width: 100%;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(40, 169, 147, 0.2);
+  }
+}
+
+@media (max-width: 480px) {
+  .tarifs-section-title {
+    font-size: 1.15rem;
+  }
+
+  .tarif-card {
+    padding: 1rem;
+  }
+
+  .tarif-service {
+    font-size: 0.9rem;
+  }
+
+  .tarif-price {
+    font-size: 0.95rem;
+  }
 }
 
 .footer-inner {
